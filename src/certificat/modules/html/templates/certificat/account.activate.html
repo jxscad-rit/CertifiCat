@@ -40,6 +40,13 @@ New-PAAccount -ExtAcctKID "{{ binding.hmac_id }}" `
     -PAUserID "{{ binding.hmac_id }}" `
     -PAUserKey "{{ binding.hmac_key }}"</code></pre>
         </c-tab>
+        <c-tab group="clients" id="lego-cli" label="lego-cli">
+            <pre><code data-trim class='language-bash'>lego accounts register \
+    --eab \
+    --eab.kid="{{ binding.hmac_id }}" \
+    --eab.hmac="{{ binding.hmac_key }}" \
+    --email="{{ request.user.email }}"</code></pre>
+        </c-tab>
     </c-tabs>
 
     <div class="mt-4">
