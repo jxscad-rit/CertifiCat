@@ -18,6 +18,7 @@
 
     <c-tabs bordered>
         <c-tab group="clients" id="certbot" label="Certbot" default>
+            <div class="my-3"><a href="https://eff-certbot.readthedocs.io/">Read the docs ➚</a></div>
             <pre><code data-trim class='language-bash'>sudo certbot register \
     --server="{{ url_root.scheme }}://{{ url_root.netloc }}{% url 'directory' %}" \
     --eab-kid="{{ binding.hmac_id }}" \
@@ -41,6 +42,7 @@ New-PAAccount -ExtAcctKID "{{ binding.hmac_id }}" `
     -PAUserKey "{{ binding.hmac_key }}"</code></pre>
         </c-tab>
         <c-tab group="clients" id="lego-cli" label="lego-cli">
+            <div class="my-3"><a href="https://go-acme.github.io/lego/">Read the docs ➚</a></div>
             <pre><code data-trim class='language-bash'>lego accounts register \
     --eab \
     --eab.kid="{{ binding.hmac_id }}" \
